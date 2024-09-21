@@ -31,20 +31,20 @@ public class AccountController {
 		return service;
 	}
 
-	@Autowired
-	public void setService(TransferService service) {
-		this.service = service;
-	}
+	// @Autowired
+	// public void setService(TransferService service) {
+	// 	this.service = service;
+	// }
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public Account handleById(@PathVariable("id") String accId) {
 		return repository.findById(accId);
 	}
 
-	@RequestMapping(value = "/{srcId}/transfer/{amount}/to/{destId}")
-	public TransferReceipt handleTransfer(@PathVariable("srcId") String srcId,
-			@PathVariable("amount") double amount,
-			@PathVariable("destId") String destId) throws InsufficientFundsException {
-		return service.transfer(amount, srcId, destId);
-	}
+	// @RequestMapping(value = "/{srcId}/transfer/{amount}/to/{destId}")
+	// public TransferReceipt handleTransfer(@PathVariable("srcId") String srcId,
+	// 		@PathVariable("amount") double amount,
+	// 		@PathVariable("destId") String destId) throws InsufficientFundsException {
+	// 	return service.transfer(amount, srcId, destId);
+	// }
 }
