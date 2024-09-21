@@ -11,12 +11,7 @@ import com.bank.service.TransferService;
 public class TransferController {
   private TransferService service;
 
-  public TransferController(TransferService service2) {
-    //TODO Auto-generated constructor stub
-  }
-
-  @Autowired
-  public void setService(TransferService service) {
+  public TransferController(TransferService service) {
     this.service = service;
   }
 
