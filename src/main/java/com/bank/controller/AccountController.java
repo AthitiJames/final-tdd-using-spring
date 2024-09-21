@@ -18,14 +18,19 @@ public class AccountController {
 	private AccountRepository repository;
 	private TransferService service;
 
-	public AccountRepository getRepository() {
-		return repository;
-	}
-
-	@Autowired
-	public void setRepository(AccountRepository repository) {
+	public AccountController(AccountRepository repository) {
 		this.repository = repository;
-	}
+    //TODO Auto-generated constructor stub
+  }
+
+  // public AccountRepository getRepository() {
+	// 	return repository;
+	// }
+
+	// @Autowired
+	// public void setRepository(AccountRepository repository) {
+	// 	this.repository = repository;
+	// }
 
 	public TransferService getService() {
 		return service;

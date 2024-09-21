@@ -14,13 +14,14 @@ public class AccountControllerTest {
 	@Test
 	public void testHandleById() {
 		// given
-		String accId = "A123";
-		AccountController controller = new AccountController();
-		Account account = new Account(accId, 100d);
+		final String accId = "A123";
+		final Account account = new Account(accId, 100d);
 
 		AccountRepository repository = mock(AccountRepository.class);
+		AccountController controller = new AccountController(repository);
+
 		when(repository.findById(anyString())).thenReturn(account);
-		controller.setRepository(repository);
+		// controller.setRepository(repository);
 
 		// when
 		Account result = controller.handleById(accId);
@@ -31,18 +32,18 @@ public class AccountControllerTest {
 
 	// @Test
 	// public void testHandleTransfer() throws InsufficientFundsException {
-	// 	// given
-	// 	String srcId = "A123";
-	// 	String destId = "B123";
-	// 	AccountController controller = new AccountController();
+	// // given
+	// String srcId = "A123";
+	// String destId = "B123";
+	// AccountController controller = new AccountController();
 
-	// 	TransferService service = mock(TransferService.class);
-	// 	controller.setService(service);
+	// TransferService service = mock(TransferService.class);
+	// controller.setService(service);
 
-	// 	// when
-	// 	controller.handleTransfer(srcId, 100d, destId);
+	// // when
+	// controller.handleTransfer(srcId, 100d, destId);
 
-	// 	// then
-	// 	verify(service).transfer(100d, srcId, destId);
+	// // then
+	// verify(service).transfer(100d, srcId, destId);
 	// }
 }
